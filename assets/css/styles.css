@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  min-height: 100vh; /* Ensure full viewport height */
+  background-color: #fbceb1; /* Optional background color */
+}
+header {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #020202;
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+footer {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #020202;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+}
+footer a:hover {
+  color: #0000ee;
+}
+
+.station-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 70%; /* Adjust grid width as needed */
+  max-width: 400px; /* Set a maximum width for responsiveness */
+}
+
+.station-item {
+  display: flex;
+  flex-direction: column; /* Optional, for vertical alignment of image and text */
+  align-items: center; /* Optional, for centering content within station item */
+  width: calc(25% - 10px); /* Adjust width for 4 items per line */
+  margin: 5px;
+  padding: 10px; /* Adjust spacing as needed */
+
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.empty {
+  background-color: #eee; /* Optional visual cue for empty slots */
+}
+
+.station-name {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.radio-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%; /* Adjust player width here */
+  background-color: #020202;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.radio-player.active {
+  visibility: visible; /* Show the player when active */
+}
+
+.audio-player {
+  width: 100%;
+}
