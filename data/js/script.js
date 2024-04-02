@@ -42,7 +42,7 @@ stations.forEach(function (station, index) {
 
   stationGrid.appendChild(stationItem);
 
-  stationImage.addEventListener("click", function () {
+  stationItem.addEventListener("click", function () {
     playStation(station);
   });
 });

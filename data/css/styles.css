@@ -7,8 +7,9 @@ body {
   justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
   min-height: 100vh; /* Ensure full viewport height */
-  background-color: #fbceb1; /* Optional background color */
+  background-color: #ffba9c;;
 }
+
 header {
   min-width: 100%;
   display: flex;
@@ -50,11 +51,37 @@ footer a:hover {
   max-width: 400px; /* Set a maximum width for responsiveness */
 }
 
+.station-item::before {
+  content: '\25B6';
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  padding: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.station-item {
+    position: relative;
+    display: inline-block;
+}
+.station-item img {
+  width: 100%;
+  height: auto;
+}
+
+.station-item:hover::before {
+  opacity: 1; /* Show play button on hover */
+}
 .station-item {
   display: flex;
   flex-direction: column; /* Optional, for vertical alignment of image and text */
   align-items: center; /* Optional, for centering content within station item */
-  width: calc(25% - 10px); /* Adjust width for 4 items per line */
+  width: calc(25% - 20px); /* Adjust width for 4 items per line */
   margin: 5px;
   padding: 10px; /* Adjust spacing as needed */
 
@@ -62,9 +89,6 @@ footer a:hover {
   cursor: pointer;
 }
 
-.empty {
-  background-color: #eee; /* Optional visual cue for empty slots */
-}
 
 .station-name {
   margin-top: 5px;
@@ -75,10 +99,11 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%; /* Adjust player width here */
+  width: 100%; /* Adjust player width here */
   background-color: #020202;
   border-radius: 10px;
   padding: 15px;
+  margin: 25px 0px 25px 0px;
   text-align: center;
 }
 
@@ -88,4 +113,28 @@ footer a:hover {
 
 .audio-player {
   width: 100%;
+}
+
+.now-playing {
+  margin: 25px 0px 25px 0px;
+  font-size: 2em;
+}
+
+.content {
+  width: 50%;
+  padding: 55px;
+  border-radius: 25px;
+  background-color: #ffcc99;
+}
+
+.menu-list li a:hover {
+  background: #E3963E;
+}
+#label-settings {
+  font-size: 2em;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.menu {
+  padding-bottom: 60px;
 }

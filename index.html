@@ -3,33 +3,199 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Groovy Tunes Radio</title>
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-  </head>
+    <title>Just {Dev}</title>
+    <link rel="icon" type="image/x-icon" href="./data/images/logos/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./data/images/logo/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./data/images/logos/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./data/images/logos/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="./data/images/logos/android-chrome-192x192.png">
+    <link rel="icon" type="image/x-icon" href="./data/images/logos/android-chrome-512x512.png">
+    <link rel="stylesheet" href="./data/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="./data/css/highlightjs_pretag.css">
+    <!-- Highlight JS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/rainbow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
   <body>
     <header>
       <div class="radio-player">
         <img
-          src="./assets/images/logos/gamingoninsulin.jpg"
-          alt="Logo"
+          src="./data/images/logos/gamingoninsulin.jpg"
+          alt="Logo.png"
           width="300px"
           height="300px" />
+          <h1 class="title_bigger_c">Welcome at Just {Dev}</h1>
         <h2 class="now-playing">Now Playing:</h2>
         <audio class="audio-player" controls></audio>
       </div>
     </header>
+	  
+    <!-- Radio List -->
+      <div class="station-grid grid-center"></div>
+    <!-- Radio List -->
 
-    <div class="station-grid"></div>
+    <aside class="is-medium menu">
+      <p class="title_c" id="label-settings">
+        categories<br>
+        {snippets}
+      </p>
+      <ul class="menu-list">
+        <!-- <li class="is-right"><a href="#css" class="is-active"><i class="fa-brands fa-css3"></i> CSS</a></li> -->
+        <li><a href="#js" class="is-active"><i class="fa-brands fa-js"></i> JS</a></li>
+        <li><a href="#py" class="is-active"><i class="fa-brands fa-python"></i> PYTHON</a></li>
+        <!-- <li><a href="#c" class="is-active"><i class="fa-sharp fa-solid fa-code"></i> C (WIP)</a></li>
+        <li><a href="#cpp" class="is-active"><i class="fa-sharp fa-solid fa-code"></i> C++ (WIP)</a></li>
+        <li><a href="#csharp" class="is-active"><i class="fa-sharp fa-solid fa-code"></i> C# (WIP)</a></li> -->
+      </ul>
+    </aside>
+
+    <!-- PYTHON -->
+    <div class="content content-bg">
+      <h1 class="title_c is-3"  id="py">Python (PY)</h1>
+        <div class="box box-bg">
+          <h4 class="title is-4">Nuber guessing game</h4>
+          <article class="message is-primary">
+            <span class="icon has-text-primary">
+              <i class="fas fa-info-circle"></i>
+            </span>
+            <div class="message-body">
+              A simple nuber game (beginner friedly)
+            </div>
+          </article>
+        <pre class="pre-taged"><code class="language-py">
+# import the importand stuff
+import random
+
+# this makes a number and stores it in num variable.
+# the number the computer chooses is beween 1 and 10
+num = random.randint(1, 10)
+
+# this sets the guess counter to zero
+guess = None
+
+# making a wile loop
+# while the guess counter is not the varable num: "then go!" 
+while guess != num:
+
+  # ask the user for the imput between 1 and 10.
+  guess = input("guess a number between 1 and 10: ")
+
+  # places the userver input in the spot of guess
+  guess = int(guess)
+  
+  #checks if the guess is equal to num we made a the top!
+  if guess == num:
+      
+      # if yes we print the succses message
+      print("congratulations! you won!")
+      
+      # and breaking out the loop!
+      break
+  # if not right
+  else:
+    # we print a failed message.
+    print("nope, sorry. try again!")            
+        </code></pre>
+      </div>
+
+      <!-- <div class="box box-bg">
+        <h4 id="py" class="title is-4">{TITLE}</h4>
+        <article class="message is-primary">
+          <span class="icon has-text-primary">
+            <i class="fas fa-info-circle"></i>
+          </span>
+          <div class="message-body">
+           {DESCRIPTION}
+          </div>
+        </article>
+      <pre class="pre-taged"><code class="language-py">
+string = "insert good code"
+print(string)
+      </code></pre>
+    </div> -->
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <div class="content content-bg">
+      <h1 class="title_c is-3"  id="js">Javascript (JS)</h1>
+        <div class="box box-bg">
+          <h4 class="title is-4">Nuber guessing game</h4>
+          <article class="message is-primary">
+            <span class="icon has-text-primary">
+              <i class="fas fa-info-circle"></i>
+            </span>
+            <div class="message-body">
+              A simple nuber game (beginner friedly)
+            </div>
+          </article>
+        <pre class="pre-taged"><code class="language-js">
+// Generate a Random Number
+let y = Math.floor(Math.random() * 10 + 1);
+
+// Counting the number of guesses
+// made for correct Guess
+let guess = 1;
+
+document.getElementById("submitguess").onclick = function () {
+
+    // Number guessed by user    
+    let x = document.getElementById("guessField").value;
+
+    if (x == y) {
+        alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
+            + guess + " GUESS ");
+    }
+
+    /* If guessed number is greater than actual number*/
+    else if (x > y) {
+        guess++;
+        alert("OOPS SORRY!! TRY A SMALLER NUMBER");
+    }
+    else {
+        guess++;
+        alert("OOPS SORRY!! TRY A GREATER NUMBER")
+    }
+}
+        </code></pre>
+      </div>
+
+      <!-- <div class="box box-bg">
+        <h4 id="py" class="title is-4">{TITLE}</h4>
+        <article class="message is-primary">
+          <span class="icon has-text-primary">
+            <i class="fas fa-info-circle"></i>
+          </span>
+          <div class="message-body">
+           {DESCRIPTION}
+          </div>
+        </article>
+      <pre class="pre-taged"><code class="language-js">
+
+      </code></pre>
+    </div> -->
+    </div>
+
 
     <footer>
       <p>
         &COPY; Copyright to
-        <a href="https://github.com/gamingoninsulin" target="_blank"
-          >GamingOnInsulin</a
-        >
+        <a href="https://github.com/gamingoninsulin" target="_blank">GamingOnInsulin</a>
       </p>
     </footer>
-    <script src="./assets/js/radiolist.js"></script>
-    <script src="./assets/js/script.js"></script>
+
+	  <!--Radio js-->
+    <script src="./data/js/radiolist.js"></script>
+    <script src="./data/js/script.js"></script>
+
+    <!--font awsome js-->
+    <script src="https://kit.fontawesome.com/8060454e96.js" crossorigin="anonymous"></script>
+    <!-- Highlight js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    
+    <script src="./data/js/script.js"></script>  
+    <script>hljs.highlightAll();</script>
+    <script src="./data/js/resize.js"></script>
   </body>
 </html>
