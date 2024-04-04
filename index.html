@@ -1,201 +1,422 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Just {Dev}</title>
-    <link rel="icon" type="image/x-icon" href="./data/images/logos/favicon-16x16.png">
-    <link rel="icon" type="image/x-icon" href="./data/images/logo/favicon-16x16.png">
-    <link rel="icon" type="image/x-icon" href="./data/images/logos/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="./data/images/logos/apple-touch-icon.png">
-    <link rel="icon" type="image/x-icon" href="./data/images/logos/android-chrome-192x192.png">
-    <link rel="icon" type="image/x-icon" href="./data/images/logos/android-chrome-512x512.png">
-    <link rel="stylesheet" href="./data/css/styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-    <link rel="stylesheet" href="./data/css/highlightjs_pretag.css">
-    <!-- Highlight JS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/rainbow.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-</head>
-  <body>
-    <header>
-      <div class="radio-player">
-        <img
-          src="./data/images/logos/gamingoninsulin.jpg"
-          alt="Logo.png"
-          width="300px"
-          height="300px" />
-          <h1 class="title_bigger_c">Welcome at Just {Dev}</h1>
-        <h2 class="now-playing">Now Playing:</h2>
-        <audio class="audio-player" controls></audio>
-      </div>
-    </header>
-	  
-    <!-- Radio List -->
-      <div class="station-grid grid-center"></div>
-    <!-- Radio List -->
+<html>
+   <head>
+      <title>Just {Dev} | Projects & Help</title>
+      <link rel="stylesheet" href="./data/css/radio-styles.css">
 
-    <aside class="is-medium menu">
-      <p class="title_c" id="label-settings">
-        categories<br>
-        {snippets}
-      </p>
-      <ul class="menu-list">
-        <!-- <li class="is-right"><a href="#css" class="is-active"><i class="fa-brands fa-css3"></i> CSS</a></li> -->
-        <li><a href="#js" class="is-active"><i class="fa-brands fa-js"></i> JS</a></li>
-        <li><a href="#py" class="is-active"><i class="fa-brands fa-python"></i> PYTHON</a></li>
-        <!-- <li><a href="#c" class="is-active"><i class="fa-sharp fa-solid fa-code"></i> C (WIP)</a></li>
-        <li><a href="#cpp" class="is-active"><i class="fa-sharp fa-solid fa-code"></i> C++ (WIP)</a></li>
-        <li><a href="#csharp" class="is-active"><i class="fa-sharp fa-solid fa-code"></i> C# (WIP)</a></li> -->
-      </ul>
-    </aside>
+      <link rel="icon" type="image/x-icon" href="./data/images/logos/favicon-16x16.png">
+      <link rel="icon" type="image/x-icon" href="./data/images/logo/favicon-16x16.png">
+      <link rel="icon" type="image/x-icon" href="./data/images/logos/favicon.ico">
+      <link rel="icon" type="image/x-icon" href="./data/images/logos/apple-touch-icon.png">
+      <link rel="icon" type="image/x-icon" href="./data/images/logos/android-chrome-192x192.png">
+      <link rel="icon" type="image/x-icon" href="./data/images/logos/android-chrome-512x512.png">
 
-    <!-- PYTHON -->
-    <div class="content content-bg">
-      <h1 class="title_c is-3"  id="py">Python (PY)</h1>
-        <div class="box box-bg">
-          <h4 class="title is-4">Nuber guessing game</h4>
-          <article class="message is-primary">
-            <span class="icon has-text-primary">
-              <i class="fas fa-info-circle"></i>
-            </span>
-            <div class="message-body">
-              A simple nuber game (beginner friedly)
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://kit.fontawesome.com/8060454e96.js" crossorigin="anonymous"></script> 
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/tailwind.min.css" rel="stylesheet" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+   </head>
+   <body>
+      <header class="border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4 bg-black ">
+         <!-- Logo text or image -->
+         <div class="flex items-center justify-between mb-4 md:mb-0">
+            <img src="./data/images/logos/gamingoninsulin.jpg" alt="Logo.png" width="50" height="50"/>
+           <h1 class="leading-none text-2xl text-grey-darkest">
+            &nbsp;
+               <a class="no-underline text-white hover:text-purple-800" href="./index.html">
+                  Just {Dev} | Projects & Help
+               </a>
+           </h1>
+       
+           <a class="text-black hover:text-purple-800 md:hidden" href="#">
+             <i class="fa fa-2x fa-bars"></i>
+           </a>
+         </div>
+         <!-- END Logo text or image -->
+         <!-- Search field -->
+        <!--
+		 <form class="mb-4 w-full md:mb-0 md:w-1/4">
+           <label class="hidden" for="search-form">Search</label>
+           <input class="bg-grey-lightest border-2 focus:border-orange p-2 rounded-lg shadow-inner w-full" placeholder="Search" type="text">
+           <button class="hidden">Submit</button>
+         </form>
+		 -->
+         <!-- END Search field -->
+         <!-- Global navigation -->
+         <nav>
+           <ul class="list-reset md:flex md:items-center">
+            <li class="md:ml-4">
+               <a class="block no-underline hover:underline py-2 text-white hover:text-purple-800 md:border-none md:p-0" href="./index.html">
+                 Home
+               </a>
+             </li> 
+            <li class="md:ml-4">
+               <a class="block no-underline hover:underline py-2 text-white hover:text-purple-800 md:border-none md:p-0" href="./snippets.html">
+                  Coding Snippets (WIP)
+               </a>
+             </li>
+             <li class="md:ml-4">
+               <a class="border-t block no-underline hover:underline py-2 text-white hover:text-purple-800 md:border-none md:p-0" href="#GetInTouch">
+                 Get In Touch
+               </a>
+             </li>
+           </ul>
+         </nav>
+         <!-- END Global navigation -->
+       </header>
+      <div class="content">
+         <div class="max-w-7xl mx-auto p-5">
+            <!-- music player -->
+            <div class="mt-10 flex flex-col items-center radio-player">
+               <div class="p-4 rounded-lg shadow-lg w-full max-w-3xl" id="MediaPlayerBg">
+                  <div class="flex items-center justify-between">
+                     <div class="flex items-center">
+                        <img src="./data/images/radio/radio-off.png" alt="Radio Logo" class="mr-3" id="radio-image" width="20%"  height="auto" >
+                        <p class="text-xl font-semibold">Now Playing:</p>
+                        <p class="text-xl font-semibold now-playing"> Choose Station!</p>
+                     </div>
+                     <audio class="audio-player" controls></audio>
+                  </div>
+                  <div class="mt-4" id="getcenterd">
+                     <!--let it be empty-->
+                  </div>
+               </div>
             </div>
-          </article>
-        <pre class="pre-taged"><code class="language-py">
-# import the importand stuff
-import random
+            <!-- end music player -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 padding-top station-grid" id="radio">
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
 
-# this makes a number and stores it in num variable.
-# the number the computer chooses is beween 1 and 10
-num = random.randint(1, 10)
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
 
-# this sets the guess counter to zero
-guess = None
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+               
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
 
-# making a wile loop
-# while the guess counter is not the varable num: "then go!" 
-while guess != num:
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
 
-  # ask the user for the imput between 1 and 10.
-  guess = input("guess a number between 1 and 10: ")
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
 
-  # places the userver input in the spot of guess
-  guess = int(guess)
-  
-  #checks if the guess is equal to num we made a the top!
-  if guess == num:
-      
-      # if yes we print the succses message
-      print("congratulations! you won!")
-      
-      # and breaking out the loop!
-      break
-  # if not right
-  else:
-    # we print a failed message.
-    print("nope, sorry. try again!")            
-        </code></pre>
-      </div>
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
 
-      <!-- <div class="box box-bg">
-        <h4 id="py" class="title is-4">{TITLE}</h4>
-        <article class="message is-primary">
-          <span class="icon has-text-primary">
-            <i class="fas fa-info-circle"></i>
-          </span>
-          <div class="message-body">
-           {DESCRIPTION}
-          </div>
-        </article>
-      <pre class="pre-taged"><code class="language-py">
-string = "insert good code"
-print(string)
-      </code></pre>
-    </div> -->
-    </div>
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
 
-    <!-- JAVASCRIPT -->
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
 
-    <div class="content content-bg">
-      <h1 class="title_c is-3"  id="js">Javascript (JS)</h1>
-        <div class="box box-bg">
-          <h4 class="title is-4">Nuber guessing game</h4>
-          <article class="message is-primary">
-            <span class="icon has-text-primary">
-              <i class="fas fa-info-circle"></i>
-            </span>
-            <div class="message-body">
-              A simple nuber game (beginner friedly)
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+               
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+               
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
+
+               <div class="bg-stone-500 rounded-lg p-3 flex items-center justify-center" id="Rdiv">
+                  <img src="https://placehold.co/50" alt="Radio Station Logo" class="mr-2" id="Rimg">
+                  <p class="text-white font-bold" id="Rspan">Station 1</p>
+               </div>
             </div>
-          </article>
-        <pre class="pre-taged"><code class="language-js">
-// Generate a Random Number
-let y = Math.floor(Math.random() * 10 + 1);
-
-// Counting the number of guesses
-// made for correct Guess
-let guess = 1;
-
-document.getElementById("submitguess").onclick = function () {
-
-    // Number guessed by user    
-    let x = document.getElementById("guessField").value;
-
-    if (x == y) {
-        alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
-            + guess + " GUESS ");
-    }
-
-    /* If guessed number is greater than actual number*/
-    else if (x > y) {
-        guess++;
-        alert("OOPS SORRY!! TRY A SMALLER NUMBER");
-    }
-    else {
-        guess++;
-        alert("OOPS SORRY!! TRY A GREATER NUMBER")
-    }
-}
-        </code></pre>
+         </div>
+         <!-- FOOTER -->
+         <footer class="footer-1 bg-black py-8 sm:py-12">
+            <div class="container mx-auto px-4">
+              <div class="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
+                <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">
+                  <h5 class="text-xl font-bold mb-6 text-white">Recent Projects</h5>
+                  <ul class="list-none footer-links">
+                    <li class="mb-2">
+                     <a href="./projects.html" id="textcolor" target="_blank" class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 text-white">Projects Hosted On Github</a>
+                  </li>
+                  </ul>
+                </div>
+                <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0">
+                  <h5 class="text-xl font-bold mb-6 text-white">Resources I Use</h5>
+                  <ul class="list-none footer-links">
+                    <li class="mb-2">
+                      <a href="https://www.udemy.com/course/minecraft-modding-120x-for-forge/" target="_blank" class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 text-white">KoupenJoe Udemy courses FORGE 1.20 (PAID)</a>
+                    </li>
+                    <li class="mb-2">  
+                     <a href="https://www.udemy.com/course/minecraft-modding-120x-for-fabric/" target="_blank" class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 text-white">KoupenJoe Udemy courses FABRIC 1.20 (PAID)</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+                  <h5 class="text-xl font-bold mb-6 text-white">About</h5>
+                  <ul class="list-none footer-links">
+                    <li class="mb-2">
+                      <a href="https://www.gamingoninsulin.github.io/AboutMe" class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 text-white"><!--About Me--></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+                  <h5 class="text-xl font-bold mb-6 text-white">Work In Progres (WIP)</h5>
+                  <ul class="list-none footer-links">
+                    <li class="mb-2">
+                      <a href="./snippets.html" class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 text-white">Coding Snippets</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="px-4 mt-4 sm:w-1/3 xl:w-1/6 sm:mx-auto xl:mt-0 xl:ml-auto">
+                  <h5 class="text-xl font-bold mb-6 sm:text-center xl:text-left text-white" id="GetInTouch">Get in Touch</h5>
+                  <div class="flex sm:justify-center xl:justify-start">
+                    <a href="https://www.github.com/GamingOnInsulin/" target="_blank" class="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 text-white hover:text-white hover:bg-lime-600">
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/GamingOnInsulin/" target="_blank" class="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 ml-2 text-white hover:text-white hover:bg-blue-400 hover:border-blue-400">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.discord.gg/n882bVJ" target="_blank" class="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 ml-2 text-white hover:text-white hover:bg-red-600 hover:border-red-600">
+                      <i class="fab fa-discord"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="sm:flex sm:flex-wrap sm:-mx-4 mt-6 pt-6 sm:mt-12 sm:pt-12 border-t">
+                <div class="sm:w-full px-4 md:w-1/6 text-white hover:text-purple-800">
+                  <strong>FWR</strong>
+                </div>
+                <div class="px-4 sm:w-1/2 md:w-1/4 mt-4 md:mt-0">
+                  <h6 class="font-bold mb-2 text-white hover:text-purple-800">Address</h6>
+                  <address class="not-italic mb-4 text-sm">
+                    123 6th St.<br>
+                    Melbourne, FL 32904
+                  </address>
+                </div>
+                <div class="px-4 sm:w-1/2 md:w-1/4 mt-4 md:mt-0">
+                  <h6 class="font-bold mb-2 text-white hover:text-purple-800">Free Resources</h6>
+                  <p class="mb-4 text-sm text-white hover:text-purple-800">Use our HTML blocks for <strong>FREE</strong>.<br>
+                    <em>All are MIT License</em></p>
+                </div>
+                <div class="px-4 md:w-1/4 md:ml-auto mt-6 sm:mt-4 md:mt-0">
+                  <button class="px-4 py-2 bg-purple-800 hover:bg-purple-900 rounded text-white hover:text-purple-800">Get Started</button>
+                </div>
+              </div> -->
+            </div>
+          </footer>
       </div>
-
-      <!-- <div class="box box-bg">
-        <h4 id="py" class="title is-4">{TITLE}</h4>
-        <article class="message is-primary">
-          <span class="icon has-text-primary">
-            <i class="fas fa-info-circle"></i>
-          </span>
-          <div class="message-body">
-           {DESCRIPTION}
-          </div>
-        </article>
-      <pre class="pre-taged"><code class="language-js">
-
-      </code></pre>
-    </div> -->
-    </div>
-
-
-    <footer>
-      <p>
-        &COPY; Copyright to
-        <a href="https://github.com/gamingoninsulin" target="_blank">GamingOnInsulin</a>
-      </p>
-    </footer>
-
-	  <!--Radio js-->
-    <script src="./data/js/radiolist.js"></script>
-    <script src="./data/js/script.js"></script>
-
-    <!--font awsome js-->
-    <script src="https://kit.fontawesome.com/8060454e96.js" crossorigin="anonymous"></script>
-    <!-- Highlight js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
-    
-    <script src="./data/js/script.js"></script>  
-    <script>hljs.highlightAll();</script>
-    <script src="./data/js/resize.js"></script>
-  </body>
+      <!-- Javascript -->
+      <script src="./data/js/radiolist.js"></script>
+      <script src="./data/js/radio-javascript.js"></script>
+   </body>
 </html>
