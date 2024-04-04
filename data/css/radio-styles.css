@@ -1,3 +1,12 @@
+@media only screen and (max-width: 999px) {
+  #Rdiv p {
+    color: #000;
+    text-align:center;
+    position:absolute;
+    margin-top: 0vh;
+}
+}
+
 body {
     background-color: #ffdbac;
 }
